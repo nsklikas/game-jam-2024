@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwqumbgi1a0qc"]
+
+[ext_resource type="Script" path="res://scripts/player/cam_rig.gd" id="1_wirt6"]
+
+[node name="Cam_rig" type="Node3D"]
+script = ExtResource("1_wirt6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.925296, 0.379246, 0, -0.379246, 0.925296, 0, 4.17523, 4.1688)
