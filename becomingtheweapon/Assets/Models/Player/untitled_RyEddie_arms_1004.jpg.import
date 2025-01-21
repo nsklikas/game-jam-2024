@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yhru0yvxmxdg"
-path.s3tc="res://.godot/imported/untitled_RyEddie_arms_1004.jpg-09e2e11fb139579b4c1e38773db1f3b0.s3tc.ctex"
+path.s3tc="res://.godot/imported/untitled_RyEddie_arms_1004.jpg-1130693cc76be922bfec1b4943668e4f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/Player/untitled_RyEddie_arms_1004.jpg"
-dest_files=["res://.godot/imported/untitled_RyEddie_arms_1004.jpg-09e2e11fb139579b4c1e38773db1f3b0.s3tc.ctex"]
+source_file="res://assets/Models/Player/untitled_RyEddie_arms_1004.jpg"
+dest_files=["res://.godot/imported/untitled_RyEddie_arms_1004.jpg-1130693cc76be922bfec1b4943668e4f.s3tc.ctex"]
 
 [params]
 

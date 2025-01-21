@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://86025jq5bb4p"
-path.s3tc="res://.godot/imported/untitled_RyEddie_face_1001.jpg-4fb8020bfd2b2ba8578d2e8762e3fc55.s3tc.ctex"
+path.s3tc="res://.godot/imported/untitled_RyEddie_face_1001.jpg-0a78ebee2e6f4a97d70754a6d08d84ab.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/Player/untitled_RyEddie_face_1001.jpg"
-dest_files=["res://.godot/imported/untitled_RyEddie_face_1001.jpg-4fb8020bfd2b2ba8578d2e8762e3fc55.s3tc.ctex"]
+source_file="res://assets/Models/Player/untitled_RyEddie_face_1001.jpg"
+dest_files=["res://.godot/imported/untitled_RyEddie_face_1001.jpg-0a78ebee2e6f4a97d70754a6d08d84ab.s3tc.ctex"]
 
 [params]
 

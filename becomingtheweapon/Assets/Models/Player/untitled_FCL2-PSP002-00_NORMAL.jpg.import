@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn35sf7fwitb0"
-path.s3tc="res://.godot/imported/untitled_FCL2-PSP002-00_NORMAL.jpg-faa2166693a13a30533f2b4a0b379ea2.s3tc.ctex"
+path.s3tc="res://.godot/imported/untitled_FCL2-PSP002-00_NORMAL.jpg-d6456bbaae42b1c41feebc2f24a87994.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/Player/untitled_FCL2-PSP002-00_NORMAL.jpg"
-dest_files=["res://.godot/imported/untitled_FCL2-PSP002-00_NORMAL.jpg-faa2166693a13a30533f2b4a0b379ea2.s3tc.ctex"]
+source_file="res://assets/Models/Player/untitled_FCL2-PSP002-00_NORMAL.jpg"
+dest_files=["res://.godot/imported/untitled_FCL2-PSP002-00_NORMAL.jpg-d6456bbaae42b1c41feebc2f24a87994.s3tc.ctex"]
 
 [params]
 
