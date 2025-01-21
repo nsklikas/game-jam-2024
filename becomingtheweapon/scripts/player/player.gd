@@ -5,62 +5,92 @@ const SPEED = 3
 const JUMP_VELOCITY = 2
 const SPEED_BOOST = 2
 const JUMP_BOOST = 5
-var canThrow = true
-var last_thrown = null
-var thrown_now = null
 
-@export var marker: Node3D
-@export var throw_strength: float = 500.0
+
+@export var throw_strength: float = 20.0
 @export var player: Node3D
 
-@onready var animation_player: AnimationPlayer = $visuals/player/AnimationPlayer
-@onready var visuals: Node3D = $visuals
+@export var left_equipment: Node3D
+@export var object_to_spawn: PackedScene
 
-var walking = false
+@onready var animation_player: AnimationPlayer = $ANIMS/AnimationPlayer
+@onready var cam: Node3D = $Cam_rig
+@onready var body: Node3D = $ANIMS
+@onready var animation_tree: AnimationTree = $AnimationTree
+var state_machine: AnimationNodeStateMachinePlayback
 
 
 func _ready():
-	#GameManager.set_player(self)
-#	blend the animation for smoother results
-#	for left to right by the set value
-	animation_player.set_blend_time("idle","walk",0.3)
-	animation_player.set_blend_time("walk","idle",0.3)
-	
+	state_machine = animation_tree["parameters/playback"]
+
 
 func _physics_process(delta: float) -> void:
+	var walk: bool
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	var speed = SPEED
 	var jump_velocity = JUMP_VELOCITY
-	if Input.is_action_pressed("slow_run"):
+	var run = Input.is_action_pressed("run")
+	if run:
 		speed = speed * SPEED_BOOST
 		jump_velocity = jump_velocity * JUMP_BOOST
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	var jump = Input.is_action_just_pressed("ui_accept") and is_on_floor()
+	if jump:
 		velocity.y = jump_velocity
+		state_machine.travel("Jump")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward") 
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (cam.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-		visuals.look_at(direction + position)
-
-		if !walking:
-			walking = true
-			animation_player.play("walk")
+		if is_on_floor():
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+			body.look_at(direction + position)
+			if not run:
+				state_machine.travel("Slow_walk")
+				walk = true
+			else:
+				state_machine.travel("Run")
+		else:
+			velocity.x = direction.x * speed * 0.1
+			velocity.z = direction.z * speed * 0.1
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
+		if is_on_floor() && not jump:
+			velocity.x = 0
+			velocity.z = 0
+			state_machine.travel("Idle")
 
-		if walking:
-			walking = false
-			animation_player.play("idle")
+	if Input.is_action_pressed("right_skill"):
+		if walk:
+			state_machine.travel("Walk aim right")
+		elif run:
+			state_machine.travel("Run_aim_right")
+		else:
+			state_machine.travel("Aim_idlle_right")
+
+	if Input.is_action_just_released("right_skill"):
+		right_hand_skill()
 
 	move_and_slide()
-	
+
+
+func right_hand_skill():
+	var g: RigidBody3D = object_to_spawn.instantiate()
+	var skeleton: Skeleton3D = body.get_node("Idle/Skeleton3D")
+	var bone = skeleton.find_bone("mixamorig_RightHand")
+	var hand_pos: Vector3 = skeleton.to_global(skeleton.get_bone_global_pose(bone).origin)
+	g.position = hand_pos
+	get_parent().add_child(g)
+
+	var force = 18
+	var upDirection = 3.5
+
+	var player_rotation = -body.transform.basis.z.normalized()
+
+	g.apply_central_impulse(player_rotation * force + Vector3(0, upDirection, 0))

@@ -1,6 +1,6 @@
 extends Node
 
-var player:Node
+var player: Node
 
 
 func set_player(player_node):

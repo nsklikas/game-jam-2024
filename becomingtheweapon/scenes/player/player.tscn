@@ -3912,6 +3912,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(0.01, 0, 0, 0, -3.57628e-09, -0.01, 0, 0.01, -3.57628e-09, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="visuals/player/Armature"]
+transform = Transform3D(1, 6.4091e-11, 3.34682e-09, 6.40838e-11, 0.999267, -0.0382832, -3.34682e-09, 0.0382832, 0.999267, 0, 0, 0)
 bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, -5.00981e-07, 6.47142e-09, -2.84217e-14, 0.0129163, 0.999917, -5.01023e-07, -0.999917, 0.0129163, -7.72729e-06, 1.55432, -104.275)

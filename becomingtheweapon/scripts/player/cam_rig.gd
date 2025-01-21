@@ -34,9 +34,10 @@ func _process(delta: float) -> void:
 		rotate_from_vector(Vector2(1, 0))   # Rotate right (clockwise)
 
 func rotate_from_vector(v: Vector2):
-	if v.length() == 0: return
+	if v.length() == 0: 
+		return
 	yaw -= v.x
-	pivot_node.rotation_degrees.y = yaw
+	rotation_degrees.y = yaw
 	update_camera_position()
 
 func update_camera_position():
