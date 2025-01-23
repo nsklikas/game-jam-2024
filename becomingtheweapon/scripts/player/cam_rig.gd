@@ -26,7 +26,7 @@ func ready():
 		#pivot_node.position = target.position
 		#
 		#pivot_node.look_at(target.position, Vector3.UP)
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Check if Q or E is being held down and rotate accordingly
 	if Input.is_action_pressed("rotate_came_left"):
 		rotate_from_vector(Vector2(-1, 0))  # Rotate left (counter-clockwise)
@@ -43,4 +43,4 @@ func rotate_from_vector(v: Vector2):
 func update_camera_position():
 	if target:
 		pivot_node.position = lerp(pivot_node.position, target.position, 0.6)
-		pivot_node.look_at(target.position, Vector3.UP)
+		#pivot_node.look_at(target.position, Vector3.UP)

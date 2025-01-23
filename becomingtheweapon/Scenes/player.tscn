@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://0i5xwydcwaes"]
+[gd_scene load_steps=69 format=3 uid="uid://0i5xwydcwaes"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_8684g"]
 [ext_resource type="PackedScene" uid="uid://bbnsjkcpoy3gy" path="res://assets/models/Player/ANIMS.glb" id="3_na4pq"]
@@ -5074,8 +5074,60 @@ states/punch_right/position = Vector2(76, -57)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_nujta"), "Idle", "Slow_walk", SubResource("AnimationNodeStateMachineTransition_s48as"), "Idle", "Aim_idle_left", SubResource("AnimationNodeStateMachineTransition_27hdr"), "Idle", "Aim_idlle_right", SubResource("AnimationNodeStateMachineTransition_uw38o"), "Aim_idle_left", "Idle", SubResource("AnimationNodeStateMachineTransition_wytf8"), "Aim_idlle_right", "Idle", SubResource("AnimationNodeStateMachineTransition_ruivr"), "Slow_walk", "Walk aim right", SubResource("AnimationNodeStateMachineTransition_8n8mt"), "Slow_walk", "Walk_aim_left", SubResource("AnimationNodeStateMachineTransition_v8dpv"), "Walk aim right", "Slow_walk", SubResource("AnimationNodeStateMachineTransition_s8v3f"), "Walk_aim_left", "Slow_walk", SubResource("AnimationNodeStateMachineTransition_5ul54"), "Run", "Run_aim_right", SubResource("AnimationNodeStateMachineTransition_qxlt0"), "Run", "Run_aim_left", SubResource("AnimationNodeStateMachineTransition_2m7v4"), "Run_aim_right", "Run", SubResource("AnimationNodeStateMachineTransition_b3y8j"), "Run_aim_left", "Run", SubResource("AnimationNodeStateMachineTransition_qme25"), "Slow_walk", "Run", SubResource("AnimationNodeStateMachineTransition_n6kd3"), "Run", "Slow_walk", SubResource("AnimationNodeStateMachineTransition_axxw8"), "Slow_walk", "Idle", SubResource("AnimationNodeStateMachineTransition_ihcsi"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_y47ve"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_7gqeo"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_h43ki"), "Idle", "punch_right", SubResource("AnimationNodeStateMachineTransition_yhvou"), "punch_right", "Idle", SubResource("AnimationNodeStateMachineTransition_88o5t"), "Idle", "Punch left", SubResource("AnimationNodeStateMachineTransition_tvsth"), "Punch left", "Idle", SubResource("AnimationNodeStateMachineTransition_jne41"), "Run", "End", SubResource("AnimationNodeStateMachineTransition_3qdm6"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_y6i52"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_gus4g"), "Slow_walk", "Jump", SubResource("AnimationNodeStateMachineTransition_prtn4")]
 graph_offset = Vector2(-278, 69)
 
+[sub_resource type="Gradient" id="Gradient_64e15"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.898487, 0.501519, 0.117038, 1, 0.909804, 0.219608, 0.054902, 1, 0.675131, 0.1481, 0.0206806, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xelqr"]
+gradient = SubResource("Gradient_64e15")
+
+[sub_resource type="Curve" id="Curve_nis4x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995074, 0.494919), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_exbab"]
+curve = SubResource("Curve_nis4x")
+
+[sub_resource type="Curve" id="Curve_radth"]
+_data = [Vector2(0, 0.743574), 0.0, 0.0, 0, 0, Vector2(0.320197, 0.362821), 0.0, 0.0, 0, 0, Vector2(0.99179, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_200yt"]
+curve = SubResource("Curve_radth")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gjjaq"]
+lifetime_randomness = 0.2
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 0.8
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 2.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_200yt")
+color = Color(0.701961, 0.345098, 0, 1)
+color_ramp = SubResource("GradientTexture1D_xelqr")
+emission_curve = SubResource("CurveTexture_exbab")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q23j1"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_tswqf"]
+material = SubResource("StandardMaterial3D_q23j1")
+radius = 0.05
+height = 0.1
+radial_segments = 8
+rings = 4
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player")]
 collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_8684g")
 player = NodePath(".")
 
@@ -5093,17 +5145,17 @@ transform = Transform3D(1, 0, 0, 0, 0.925296, 0.379246, 0, -0.379246, 0.925296, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="ANIMS/Idle" index="0"]
-bones/0/position = Vector3(0.0612262, 0.397834, 0.00229718)
-bones/0/rotation = Quaternion(-0.0293681, -0.0505662, -0.029151, 0.997863)
-bones/1/rotation = Quaternion(-0.0281738, 0.0129734, 0.0228691, 0.999257)
-bones/2/rotation = Quaternion(0.0103405, 0.00214378, 0.0140348, 0.999846)
-bones/3/rotation = Quaternion(0.010366, 0.00249131, 0.0142574, 0.999842)
-bones/4/rotation = Quaternion(0.106781, -0.00190861, 0.00430909, 0.994271)
-bones/5/rotation = Quaternion(-0.0693149, 0.0100682, -0.00180303, 0.997542)
-bones/7/rotation = Quaternion(-0.671526, -0.333867, 0.520318, -0.408478)
-bones/8/rotation = Quaternion(0.490517, 0.136123, 0.0547795, 0.858989)
-bones/9/rotation = Quaternion(0.00182342, -0.00832839, 0.013192, 0.999877)
-bones/10/rotation = Quaternion(0.0589223, -0.206502, -0.0176437, 0.976511)
+bones/0/position = Vector3(0.060076, 0.397947, 0.00350743)
+bones/0/rotation = Quaternion(-0.0349636, -0.0446861, -0.0244659, 0.998089)
+bones/1/rotation = Quaternion(-0.0332621, 0.0129015, 0.0240308, 0.999074)
+bones/2/rotation = Quaternion(0.00967994, 0.00208102, 0.0145981, 0.999844)
+bones/3/rotation = Quaternion(0.009499, 0.00187931, 0.0142332, 0.999852)
+bones/4/rotation = Quaternion(0.103422, -0.00180815, 0.00487119, 0.994624)
+bones/5/rotation = Quaternion(-0.0666161, 0.0113271, -0.00226529, 0.997712)
+bones/7/rotation = Quaternion(-0.667442, -0.339166, 0.52096, -0.409986)
+bones/8/rotation = Quaternion(0.498173, 0.139108, 0.0510309, 0.854323)
+bones/9/rotation = Quaternion(0.00204832, -0.00832807, 0.0148188, 0.999853)
+bones/10/rotation = Quaternion(0.0641956, -0.200749, -0.0194328, 0.977344)
 bones/11/rotation = Quaternion(0.177611, 0.0616751, 0.245683, 0.950942)
 bones/12/rotation = Quaternion(-0.0860663, 0.0827824, -0.247875, 0.961404)
 bones/13/rotation = Quaternion(-0.126467, -0.0705988, 0.0516209, 0.988108)
@@ -5119,10 +5171,10 @@ bones/25/rotation = Quaternion(0.155316, -7.34581e-08, -0.0148584, 0.987753)
 bones/27/rotation = Quaternion(0.232244, 0.00987771, -0.00560635, 0.972591)
 bones/28/rotation = Quaternion(0.151472, 6.02449e-08, -0.0132493, 0.988373)
 bones/29/rotation = Quaternion(0.1437, -7.85803e-08, -0.0125693, 0.989541)
-bones/31/rotation = Quaternion(0.676491, -0.324855, 0.532802, 0.39109)
-bones/32/rotation = Quaternion(0.422099, -0.222978, -0.0707831, 0.875844)
-bones/33/rotation = Quaternion(0.00754671, 0.00827138, -0.0573907, 0.998289)
-bones/34/rotation = Quaternion(0.0658984, 0.101983, 0.0347139, 0.991994)
+bones/31/rotation = Quaternion(0.674061, -0.327974, 0.53391, 0.39117)
+bones/32/rotation = Quaternion(0.41739, -0.227702, -0.0727607, 0.876723)
+bones/33/rotation = Quaternion(0.00746258, 0.00827174, -0.0567513, 0.998326)
+bones/34/rotation = Quaternion(0.0620727, 0.100907, 0.0356961, 0.992316)
 bones/35/rotation = Quaternion(0.178616, -0.0573848, -0.263402, 0.946268)
 bones/36/rotation = Quaternion(-0.0745104, -0.0755917, 0.26522, 0.958328)
 bones/37/rotation = Quaternion(-0.159443, 0.0733938, 0.0137717, 0.984379)
@@ -5138,14 +5190,14 @@ bones/49/rotation = Quaternion(0.15561, 8.32661e-08, 0.0113653, 0.987753)
 bones/51/rotation = Quaternion(0.225825, -0.00656764, 0.00551283, 0.97413)
 bones/52/rotation = Quaternion(0.151659, 4.38886e-08, 0.0109305, 0.988372)
 bones/53/rotation = Quaternion(0.143875, 9.63918e-08, 0.0103694, 0.989542)
-bones/55/rotation = Quaternion(0.136743, 0.0792703, 0.984951, -0.0699217)
-bones/56/rotation = Quaternion(-0.135504, -0.0175389, 0.0510345, 0.989306)
-bones/57/rotation = Quaternion(0.51856, -0.0784739, -0.0122532, 0.851344)
+bones/55/rotation = Quaternion(0.13353, 0.0670962, 0.986642, -0.0648495)
+bones/56/rotation = Quaternion(-0.124405, -0.0160391, 0.0523461, 0.99072)
+bones/57/rotation = Quaternion(0.515434, -0.0788956, -0.0132421, 0.853187)
 bones/58/rotation = Quaternion(0.285304, 0.015963, -0.00391863, 0.958296)
-bones/60/rotation = Quaternion(-0.0893599, -0.0197175, 0.995148, -0.0361312)
-bones/61/rotation = Quaternion(-0.066988, 0.0851695, -0.0424744, 0.993204)
-bones/62/rotation = Quaternion(0.54076, 0.0694624, -0.0208467, 0.838045)
-bones/63/rotation = Quaternion(0.311313, -0.0176546, 0.00455294, 0.950133)
+bones/60/rotation = Quaternion(-0.0922671, -0.0241741, 0.994935, -0.0317276)
+bones/61/rotation = Quaternion(-0.0724509, 0.0849845, -0.0432511, 0.992803)
+bones/62/rotation = Quaternion(0.545614, 0.0734005, -0.02195, 0.834528)
+bones/63/rotation = Quaternion(0.310101, -0.0178117, 0.00459487, 0.950526)
 
 [node name="AnimationPlayer" parent="ANIMS" index="1"]
 libraries = {
@@ -5160,6 +5212,17 @@ shape = SubResource("CylinderShape3D_8epl2")
 root_node = NodePath("../ANIMS")
 tree_root = SubResource("AnimationNodeStateMachine_jeouf")
 anim_player = NodePath("../ANIMS/AnimationPlayer")
+
+[node name="BloodAnimation" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00122452, 0.501524, -0.00588977)
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.4
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_gjjaq")
+draw_pass_1 = SubResource("SphereMesh_tswqf")
 
 [editable path="Cam_rig"]
 [editable path="ANIMS"]

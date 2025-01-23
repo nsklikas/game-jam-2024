@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://dpfifol8jo4su"]
+[gd_scene load_steps=13 format=4 uid="uid://dpfifol8jo4su"]
 
 [ext_resource type="Script" path="res://scripts/grenade.gd" id="1_ag1c6"]
 [ext_resource type="PackedScene" uid="uid://d3rct4xi24tw6" path="res://scenes/explosion.tscn" id="2_1b5sx"]
+[ext_resource type="Shader" path="res://scenes/grenade.gdshader" id="3_x037p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llrag"]
 
@@ -37,6 +38,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_aocd8")
 
+[sub_resource type="Gradient" id="Gradient_6kena"]
+offsets = PackedFloat32Array(0, 0.28547, 0.623932, 1)
+colors = PackedColorArray(0.745098, 0, 0, 1, 0.756863, 0.313726, 0.756863, 1, 0.505882, 0.196078, 0.968627, 1, 0.658824, 0.176471, 0.682353, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r73t0"]
+gradient = SubResource("Gradient_6kena")
+repeat = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvpe0"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.996078, 0.423529, 0.105882, 1)
+albedo_texture = SubResource("GradientTexture2D_r73t0")
+albedo_texture_force_srgb = true
+albedo_texture_msdf = true
+metallic = 0.52
+roughness = 0.63
+disable_receive_shadows = true
+distance_fade_min_distance = 1574.4
+distance_fade_max_distance = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6irn0"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_dvpe0")
+shader = ExtResource("3_x037p")
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_fxuci"]
 radius = 1.08997
 
@@ -44,7 +70,7 @@ radius = 1.08997
 radius = 3.0
 
 [node name="Grenade" type="RigidBody3D"]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 5
 continuous_cd = true
 contact_monitor = true
@@ -55,12 +81,15 @@ explosion_scene = ExtResource("2_1b5sx")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_xfxy3")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_6irn0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_fxuci")
 
 [node name="BlastRadius" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BlastRadius"]
 shape = SubResource("SphereShape3D_kiw2w")
@@ -69,5 +98,5 @@ shape = SubResource("SphereShape3D_kiw2w")
 one_shot = true
 autostart = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="BlastRadius" to="." method="_on_blast_radius_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

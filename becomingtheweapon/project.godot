@@ -66,6 +66,13 @@ right_skill={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="terrain"
+3d_physics/layer_2="player"
+3d_physics/layer_3="enemies"
+3d_physics/layer_4="skills"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

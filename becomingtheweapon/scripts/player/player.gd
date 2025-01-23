@@ -17,7 +17,12 @@ const JUMP_BOOST = 5
 @onready var cam: Node3D = $Cam_rig
 @onready var body: Node3D = $ANIMS
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var blood_animation: GPUParticles3D = $BloodAnimation
+
+
 var state_machine: AnimationNodeStateMachinePlayback
+var applied_force = null
+var health = 400
 
 
 func _ready():
@@ -77,6 +82,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("right_skill"):
 		right_hand_skill()
 
+	apply_external_forces()
 	move_and_slide()
 
 
@@ -94,3 +100,22 @@ func right_hand_skill():
 	var player_rotation = -body.transform.basis.z.normalized()
 
 	g.apply_central_impulse(player_rotation * force + Vector3(0, upDirection, 0))
+
+
+func hit(damage: int):
+	health = health - damage
+	blood_animation.emitting = true
+	if health <= 0:
+		queue_free()
+
+
+func apply_force(velocity):
+	applied_force = [velocity, 5]
+
+
+func apply_external_forces():
+	if applied_force:
+		velocity = velocity + applied_force[0]
+		applied_force[1] = applied_force[1] - 1
+		if applied_force[1] <= 0:
+			applied_force = null
