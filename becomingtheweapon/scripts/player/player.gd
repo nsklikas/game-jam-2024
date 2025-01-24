@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 3
+const SPEED = 2
 const JUMP_VELOCITY = 2
 const SPEED_BOOST = 2
 const JUMP_BOOST = 5
@@ -18,7 +18,6 @@ const JUMP_BOOST = 5
 @onready var body: Node3D = $ANIMS
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var blood_animation: GPUParticles3D = $BloodAnimation
-
 
 var state_machine: AnimationNodeStateMachinePlayback
 var applied_force = null
@@ -59,9 +58,11 @@ func _physics_process(delta: float) -> void:
 			body.look_at(direction + position)
 			if not run:
 				state_machine.travel("Slow_walk")
+				animation_tree.set("parameters/TimeScale/scale", SPEED)
 				walk = true
 			else:
 				state_machine.travel("Run")
+				animation_tree.set("parameters/TimeScale/scale", SPEED_BOOST)
 		else:
 			velocity.x = direction.x * speed * 0.1
 			velocity.z = direction.z * speed * 0.1
@@ -103,6 +104,7 @@ func right_hand_skill():
 
 
 func hit(damage: int):
+	cam.apply_shade()
 	health = health - damage
 	blood_animation.emitting = true
 	if health <= 0:

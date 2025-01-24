@@ -23,15 +23,14 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		animation_player.play("walk")
-		move_and_slide()
 	elif target && jump_back:
 		var direction = (target.position + position).normalized()
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		animation_player.play("walk")
 		jump_back = jump_back - 1
-		move_and_slide()
-		
+
+	move_and_slide()
 
 
 func enemy_hit(damage):
