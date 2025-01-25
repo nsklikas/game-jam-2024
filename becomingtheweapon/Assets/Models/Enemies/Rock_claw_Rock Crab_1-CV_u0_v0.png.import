@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccxbgkhs3jj5o"
-path.s3tc="res://.godot/imported/Rock_claw_Rock Crab_1-CV_u0_v0.png-00c20427dcc15edff890cdea23a06348.s3tc.ctex"
+path.s3tc="res://.godot/imported/Rock_claw_Rock Crab_1-CV_u0_v0.png-64c373872b0a8e61a303793c1dd099f5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/Enemies/Rock_claw_Rock Crab_1-CV_u0_v0.png"
-dest_files=["res://.godot/imported/Rock_claw_Rock Crab_1-CV_u0_v0.png-00c20427dcc15edff890cdea23a06348.s3tc.ctex"]
+source_file="res://assets/Models/Enemies/Rock_claw_Rock Crab_1-CV_u0_v0.png"
+dest_files=["res://.godot/imported/Rock_claw_Rock Crab_1-CV_u0_v0.png-64c373872b0a8e61a303793c1dd099f5.s3tc.ctex"]
 
 [params]
 
