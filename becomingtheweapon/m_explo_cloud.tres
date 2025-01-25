@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://55otga70k2iy"]
+
+[ext_resource type="Shader" uid="uid://girbko2dal0y" path="res://shaders/Explo.tres" id="1_igrge"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_igrge")
+shader_parameter/CloudSpeed = Vector2(0.2, 0.7)
+shader_parameter/CloudIntensity = 0.3

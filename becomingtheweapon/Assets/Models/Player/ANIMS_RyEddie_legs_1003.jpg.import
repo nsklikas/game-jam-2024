@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0uuc8kaf5mxp"
-path.s3tc="res://.godot/imported/ANIMS_RyEddie_legs_1003.jpg-43981a7a254823603a1291daf4660068.s3tc.ctex"
+path.s3tc="res://.godot/imported/ANIMS_RyEddie_legs_1003.jpg-836b639cc29924f27cb286fd7799043c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/Player/ANIMS_RyEddie_legs_1003.jpg"
-dest_files=["res://.godot/imported/ANIMS_RyEddie_legs_1003.jpg-43981a7a254823603a1291daf4660068.s3tc.ctex"]
+source_file="res://assets/Models/Player/ANIMS_RyEddie_legs_1003.jpg"
+dest_files=["res://.godot/imported/ANIMS_RyEddie_legs_1003.jpg-836b639cc29924f27cb286fd7799043c.s3tc.ctex"]
 
 [params]
 
