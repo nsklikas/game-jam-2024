@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://d3rct4xi24tw6"]
 
-[ext_resource type="Script" path="res://scenes/explosion.gd" id="1_14ckv"]
+[ext_resource type="Script" path="res://Scenes/explosion.gd" id="1_14ckv"]
 
 [sub_resource type="Curve" id="Curve_74rie"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.648604, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -36,8 +36,8 @@ metadata/_snap_enabled = true
 gradient = SubResource("Gradient_y4rfo")
 
 [sub_resource type="Curve" id="Curve_sycx7"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995074, 0.494919), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.431271, 1), 0.0, 0.0, 0, 0, Vector2(0.670103, 0.101759), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_qmnxi"]
 curve = SubResource("Curve_sycx7")
@@ -82,9 +82,11 @@ script = ExtResource("1_14ckv")
 [node name="Debris" type="GPUParticles3D" parent="."]
 emitting = false
 amount = 24
-lifetime = 0.5
+lifetime = 0.3
 one_shot = true
+speed_scale = 2.5
 explosiveness = 1.0
+randomness = 0.37
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_a2jt2")
 draw_pass_1 = SubResource("CylinderMesh_5otcn")
@@ -92,8 +94,11 @@ draw_pass_1 = SubResource("CylinderMesh_5otcn")
 [node name="Fire" type="GPUParticles3D" parent="."]
 emitting = false
 amount = 20
+lifetime = 0.5
 one_shot = true
-explosiveness = 0.7
+speed_scale = 5.59
+explosiveness = 0.82
+randomness = 0.09
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_36loi")
 draw_pass_1 = SubResource("SphereMesh_ro3mt")

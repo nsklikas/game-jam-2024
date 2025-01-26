@@ -17,11 +17,11 @@ const JUMP_BOOST = 5
 @onready var cam: Node3D = $Cam_rig
 @onready var body: Node3D = $ANIMS
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var blood_animation: GPUParticles3D = $BloodAnimation
+@onready var shield_sphere: Shield = $ShieldSphere
 
 var state_machine: AnimationNodeStateMachinePlayback
 var applied_force = null
-var health = 400
+var health = 800
 
 
 func _ready():
@@ -106,7 +106,6 @@ func right_hand_skill():
 func hit(damage: int):
 	cam.apply_shade()
 	health = health - damage
-	blood_animation.emitting = true
 	if health <= 0:
 		queue_free()
 

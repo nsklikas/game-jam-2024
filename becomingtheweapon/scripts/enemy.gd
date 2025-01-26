@@ -25,6 +25,7 @@ func _physics_process(_delta: float) -> void:
 		animation_player.play("walk")
 	elif target && jump_back:
 		var direction = (target.position + position).normalized()
+		look_at(target.global_position)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		animation_player.play("walk")

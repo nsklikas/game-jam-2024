@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=4 uid="uid://dpfifol8jo4su"]
 
 [ext_resource type="Script" path="res://scripts/grenade.gd" id="1_ag1c6"]
-[ext_resource type="PackedScene" uid="uid://d3rct4xi24tw6" path="res://scenes/explosion.tscn" id="2_1b5sx"]
-[ext_resource type="Shader" path="res://scenes/grenade.gdshader" id="3_x037p"]
+[ext_resource type="PackedScene" uid="uid://d3rct4xi24tw6" path="res://Scenes/explosion.tscn" id="2_1b5sx"]
+[ext_resource type="Shader" path="res://Scenes/grenade.gdshader" id="3_x037p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llrag"]
 
@@ -62,6 +62,12 @@ distance_fade_max_distance = 0.0
 render_priority = 0
 next_pass = SubResource("StandardMaterial3D_dvpe0")
 shader = ExtResource("3_x037p")
+shader_parameter/color = null
+shader_parameter/fresnel_sharpness = 1.0
+shader_parameter/extend_distance = 0.0
+shader_parameter/impact_points = PackedVector4Array()
+shader_parameter/impact_size = 0.25
+shader_parameter/impact_falloff_sharpness = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fxuci"]
 radius = 1.08997

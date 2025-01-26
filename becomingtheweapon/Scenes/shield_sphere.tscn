@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=4 uid="uid://dsy3t1ks0x3bw"]
+
+[ext_resource type="Script" path="res://Scenes/Shield.gd" id="1_f68pw"]
+[ext_resource type="Shader" path="res://Scenes/shield_with_impacts.gdshader" id="2_va05h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_up444"]
+radius = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bh7u"]
+render_priority = 0
+shader = ExtResource("2_va05h")
+shader_parameter/color = Color(0.690196, 0.921569, 1, 1)
+shader_parameter/fresnel_sharpness = 2.0
+shader_parameter/extend_distance = 0.0
+shader_parameter/impact_points = PackedVector4Array()
+shader_parameter/impact_size = 2.0
+shader_parameter/impact_falloff_sharpness = 8.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_cl33l"]
+radius = 1.0
+height = 2.0
+
+[node name="ShieldSphere" type="Area3D" node_paths=PackedStringArray("shield_appearance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00373006, 0, 0)
+collision_mask = 4
+script = ExtResource("1_f68pw")
+shield_appearance = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_up444")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_1bh7u")
+mesh = SubResource("SphereMesh_cl33l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

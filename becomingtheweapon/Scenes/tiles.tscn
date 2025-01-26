@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://gucr7ayl3vli"]
+[gd_scene load_steps=5 format=3 uid="uid://gucr7ayl3vli"]
+
+[ext_resource type="Shader" uid="uid://c3nafapa20pw2" path="res://Scenes/tiles.tres" id="1_nx8im"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5iti"]
+render_priority = 0
+shader = ExtResource("1_nx8im")
 
 [sub_resource type="BoxMesh" id="BoxMesh_m1l0t"]
 material = SubResource("ShaderMaterial_c5iti")
