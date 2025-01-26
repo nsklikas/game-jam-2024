@@ -17,7 +17,7 @@ func ready():
 	update_camera_position()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Check if Q or E is being held down and rotate accordingly
 	if Input.is_action_pressed("rotate_came_left"):
 		rotate_from_vector(Vector2(-1, 0))  # Rotate left (counter-clockwise)
@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 		var offset = random_offset()
 		camera.h_offset = offset[0]
 		camera.v_offset = offset[1]
+	update_camera_position()
 
 
 func rotate_from_vector(v: Vector2):

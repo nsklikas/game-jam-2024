@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://i62xpj8dx48v"]
+[gd_scene load_steps=10 format=3 uid="uid://i62xpj8dx48v"]
 
 [sub_resource type="Shader" id="Shader_vp4xs"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
@@ -107,11 +107,12 @@ seed = 5
 frequency = 0.0175
 offset = Vector3(5, 0, 0)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c8q0q"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ecgeg"]
 width = 256
 height = 256
-invert = true
 seamless = true
+seamless_blend_skirt = 0.366
+as_normal_map = true
 color_ramp = SubResource("Gradient_87put")
 noise = SubResource("FastNoiseLite_o7jo0")
 
@@ -129,40 +130,6 @@ noise = SubResource("FastNoiseLite_mais3")
 seamless = true
 as_normal_map = true
 noise = SubResource("FastNoiseLite_mais3")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4njbw"]
-render_priority = 0
-shader = SubResource("Shader_vp4xs")
-shader_parameter/albedo = Color(0.694702, 0.49624, 0.229826, 1)
-shader_parameter/point_size = 1.0
-shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = null
-shader_parameter/specular = 0.62
-shader_parameter/metallic = 0.0
-shader_parameter/refraction = 0.05
-shader_parameter/refraction_texture_channel = null
-shader_parameter/normal_scale = 8.715
-shader_parameter/uv1_blend_sharpness = 1.0
-shader_parameter/uv1_scale = Vector3(0.5, 0.1, 0.1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/texture_albedo = SubResource("NoiseTexture2D_c8q0q")
-shader_parameter/texture_refraction = SubResource("NoiseTexture2D_qwyoy")
-shader_parameter/texture_normal = SubResource("NoiseTexture2D_phxkv")
-
-[sub_resource type="BoxMesh" id="BoxMesh_hi6dx"]
-material = SubResource("ShaderMaterial_4njbw")
-size = Vector3(100, 1, 100)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ecgeg"]
-width = 256
-height = 256
-seamless = true
-seamless_blend_skirt = 0.366
-as_normal_map = true
-color_ramp = SubResource("Gradient_87put")
-noise = SubResource("FastNoiseLite_o7jo0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kamx5"]
 render_priority = 0
@@ -191,13 +158,7 @@ size = Vector3(100, 1, 100)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Sea" type="MeshInstance3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030748, 0.379485, -2.83312)
-visible = false
-mesh = SubResource("BoxMesh_hi6dx")
-
 [node name="Sea2" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030748, 0.379485, -2.83312)
+transform = Transform3D(1, 0, 0, 0, 2.36768, 0, 0, 0, 1, 0.030748, 0.379485, -2.83312)
 mesh = SubResource("BoxMesh_6tnmy")

@@ -41,7 +41,7 @@ func explode():
 	queue_free()
 
 
-func _on_blast_radius_body_entered(body: Node3D) -> void:
+func _on_blast_radius_body_entered(_body: Node3D) -> void:
 	if not triggered:
 		timer.start()
 		explode()

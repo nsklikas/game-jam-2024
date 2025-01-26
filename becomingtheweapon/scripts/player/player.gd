@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 2
 const JUMP_VELOCITY = 2
-const SPEED_BOOST = 2
+const SPEED_BOOST = 20
 const JUMP_BOOST = 5
 
 
@@ -17,7 +17,7 @@ const JUMP_BOOST = 5
 @onready var cam: Node3D = $Cam_rig
 @onready var body: Node3D = $ANIMS
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var shield_sphere: Shield = $ShieldSphere
+@onready var shield_sphere: Shield = $ANIMS/ShieldSphere
 
 var state_machine: AnimationNodeStateMachinePlayback
 var applied_force = null
@@ -103,15 +103,17 @@ func right_hand_skill():
 	g.apply_central_impulse(player_rotation * force + Vector3(0, upDirection, 0))
 
 
-func hit(damage: int):
+func hit(enemy: CharacterBody3D, damage: int):
 	cam.apply_shade()
 	health = health - damage
+	if shield_sphere.active:
+		shield_sphere.hit(enemy)
 	if health <= 0:
 		queue_free()
 
 
-func apply_force(velocity):
-	applied_force = [velocity, 5]
+func apply_force(v):
+	applied_force = [v, 5]
 
 
 func apply_external_forces():

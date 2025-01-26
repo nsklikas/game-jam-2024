@@ -3,10 +3,13 @@ class_name Shield extends Area3D
 const SHIELD_IMPACT_DECAY_SPEED: float = 1
 
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@export var shield_appearance:MeshInstance3D
+
+@export var shield_appearance: MeshInstance3D
+@export var active: bool = true
+
 # note that the size of the buffer created here must match the impacts_tracked const in the shader
 # this can be freely changed however if you want to support more than 16 simultaneous impacts
-var _points:PointBuffer = PointBuffer.new(16)
+var _points: PointBuffer = PointBuffer.new(16)
 
 
 func _ready() -> void:
@@ -27,7 +30,15 @@ func _on_body_entered(body: Node3D) -> void:
 	if collision.collider:
 		_points.push(to_local(collision.position))
 	
+
+func hit(from: Node3D):
+	var space = get_world_3d().direct_space_state
+	var ray_params = PhysicsRayQueryParameters3D.create(global_transform.origin, from.global_transform.origin)
+	var collision = space.intersect_ray(ray_params)
+	if collision.collider:
+		_points.push(to_local(collision.position))
 	
+
 	
 # the below is just a data structure to make handling impacts simpler
 # it automatically removes the oldest impact information when new impacts are added

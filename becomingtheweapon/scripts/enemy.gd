@@ -17,6 +17,11 @@ func _ready() -> void:
 	animation_player.set_blend_time("CLAW", "walk", 0.3)
 
 func _physics_process(_delta: float) -> void:
+	if target:
+		var pos = global_transform.origin
+		var target_pos = target.global_transform.origin
+		var d = pos.distance_to(target_pos)
+		attack = d < 2
 	if target && not attack && not jump_back:
 		var direction = (target.position - position).normalized()
 		look_at(target.global_position)
@@ -41,19 +46,14 @@ func enemy_hit(damage):
 
 
 func _on_detection_area_body_entered(body: Node3D) -> void:
-	var space = get_world_3d().direct_space_state
-	# Check if there are any obstacles between the enemy and the target
-	var ray_params = PhysicsRayQueryParameters3D.create(global_transform.origin, body.global_transform.origin, detection_area.collision_mask)
-	var collision = space.intersect_ray(ray_params)
-	if collision:
-		target = collision.collider
+	target = body
 
 
 func _on_detection_area_body_exited(_body: Node3D) -> void:
 	target = null
 
 
-func _on_attack_area_body_entered(body: Node3D) -> void:
+func _on_attack_area_body_entered(_body: Node3D) -> void:
 	animation_player.set_blend_time("walk", "CLAW", 0.3)
 	animation_player.play("CLAW")
 	animation_player.set_speed_scale(0.8)
@@ -63,12 +63,11 @@ func _on_attack_area_body_entered(body: Node3D) -> void:
 func _on_attack_area_body_exited(_body: Node3D) -> void:
 	animation_player.set_blend_time("CLAW", "walk", 0.3)
 	attack = false
-	jump_back = 5
 
 
 func _on_right_arm_area_body_entered(body: CharacterBody3D) -> void:
-	body.hit(DAMAGE)
+	body.hit(self, DAMAGE)
 
 
 func _on_left_arm_area_body_entered(body: CharacterBody3D) -> void:
-	body.hit(DAMAGE)
+	body.hit(self, DAMAGE)
