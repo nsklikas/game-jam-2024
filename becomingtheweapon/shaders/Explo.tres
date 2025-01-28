@@ -19,11 +19,11 @@ texture = SubResource("NoiseTexture2D_g360p")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_8klo3"]
-size = Vector2(804, 494)
+size = Vector2(804, 258)
 attached_nodes = PackedInt32Array(3, 2)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_cup4b"]
-size = Vector2(1224, 974)
+size = Vector2(1224, 738)
 title = "Color"
 attached_nodes = PackedInt32Array(8, 4, 9, 11, 10, 18, 6, 20)
 
@@ -36,7 +36,7 @@ texture = ExtResource("1_a8xeu")
 linked_parent_graph_frame = 17
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_0aorb"]
-size = Vector2(824, 416)
+size = Vector2(824, 118)
 title = "disolver"
 attached_nodes = PackedInt32Array(15, 14)
 
@@ -273,7 +273,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-320.521, -254.538)
 nodes/vertex/0/position = Vector2(600, 160)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_xuulw")
 nodes/vertex/2/position = Vector2(-360, 100)

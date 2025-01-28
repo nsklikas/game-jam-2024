@@ -1,5 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsk73ck2fusw3"]
-
-[ext_resource type="PackedScene" uid="uid://dhwhlqbqswan3" path="res://assets/tiles/tile.glb" id="1_a63kc"]
-
-[node name="tile" instance=ExtResource("1_a63kc")]
+version https://git-lfs.github.com/spec/v1
+oid sha256:3098fd0e57904e5fa3a9c5774798052d44c540a3f545da44803aeb65ec434807
+size 220

@@ -1,23 +1,3 @@
-[gd_scene load_steps=5 format=3 uid="uid://gucr7ayl3vli"]
-
-[ext_resource type="Shader" uid="uid://c3nafapa20pw2" path="res://Scenes/tiles.tres" id="1_nx8im"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5iti"]
-render_priority = 0
-shader = ExtResource("1_nx8im")
-
-[sub_resource type="BoxMesh" id="BoxMesh_m1l0t"]
-material = SubResource("ShaderMaterial_c5iti")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_en643"]
-
-[node name="Tile" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00344944, 0.0271249, 0.00968802)
-mesh = SubResource("BoxMesh_m1l0t")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_en643")
+version https://git-lfs.github.com/spec/v1
+oid sha256:def4d771bf3af0a9aa1dc45e6c1201565de7abd427f6dff39eba09db80148eb7
+size 851

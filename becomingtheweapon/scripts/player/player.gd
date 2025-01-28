@@ -17,7 +17,11 @@ const JUMP_BOOST = 5
 @onready var cam: Node3D = $Cam_rig
 @onready var body: Node3D = $ANIMS
 @onready var animation_tree: AnimationTree = $AnimationTree
+<<<<<<< Updated upstream
 @onready var shield_sphere: Shield = $ANIMS/ShieldSphere
+=======
+@onready var shield_sphere: Area3D = $ShieldSphere
+>>>>>>> Stashed changes
 
 var state_machine: AnimationNodeStateMachinePlayback
 var applied_force = null
