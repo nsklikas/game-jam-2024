@@ -1,4 +1,4 @@
-extends Area3D
+class_name Shield extends Area3D
 
 const SHIELD_IMPACT_DECAY_SPEED: float = 1
 
