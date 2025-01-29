@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn3xrw8qle3ip"
-path.s3tc="res://.godot/imported/tile_Ground059.png-e2f9c4a64ab504382ac0917985505c80.s3tc.ctex"
+path.s3tc="res://.godot/imported/tile_Ground059.png-f39d90b2027d869ddd3cbe21146ee3ef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/tiles/tile_Ground059.png"
-dest_files=["res://.godot/imported/tile_Ground059.png-e2f9c4a64ab504382ac0917985505c80.s3tc.ctex"]
+source_file="res://Assets/tiles/tile_Ground059.png"
+dest_files=["res://.godot/imported/tile_Ground059.png-f39d90b2027d869ddd3cbe21146ee3ef.s3tc.ctex"]
 
 [params]
 

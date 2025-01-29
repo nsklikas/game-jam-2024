@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cyr2d4co7pfv"
-path="res://.godot/imported/Ter1.glb-4bd00974849ad0c549f7ce3fc766530a.scn"
+path="res://.godot/imported/Ter1.glb-5b8e825adfe5b2661f98072ac2cb1d79.scn"
 
 [deps]
 
-source_file="res://assets/World meshes/Ter1.glb"
-dest_files=["res://.godot/imported/Ter1.glb-4bd00974849ad0c549f7ce3fc766530a.scn"]
+source_file="res://Assets/World meshes/Ter1.glb"
+dest_files=["res://.godot/imported/Ter1.glb-5b8e825adfe5b2661f98072ac2cb1d79.scn"]
 
 [params]
 

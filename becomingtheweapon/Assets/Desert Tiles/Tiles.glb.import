@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://crdmso3m8iw5l"
-path="res://.godot/imported/Tiles.glb-f00b7446e368433c324eac52ab9c02d8.scn"
+path="res://.godot/imported/Tiles.glb-e39328cad7f4d7d4db65c5c54eaa1947.scn"
 
 [deps]
 
-source_file="res://assets/Desert Tiles/Tiles.glb"
-dest_files=["res://.godot/imported/Tiles.glb-f00b7446e368433c324eac52ab9c02d8.scn"]
+source_file="res://Assets/Desert Tiles/Tiles.glb"
+dest_files=["res://.godot/imported/Tiles.glb-e39328cad7f4d7d4db65c5c54eaa1947.scn"]
 
 [params]
 

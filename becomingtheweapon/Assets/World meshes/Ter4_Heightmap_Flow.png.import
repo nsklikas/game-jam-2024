@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu8fkh0pg07vy"
-path.s3tc="res://.godot/imported/Ter4_Heightmap_Flow.png-c20d9c1302723ee8a7f3c6e579a16b58.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ter4_Heightmap_Flow.png-7cc4b7d6ed31a635cd5260e1198874f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/World meshes/Ter4_Heightmap_Flow.png"
-dest_files=["res://.godot/imported/Ter4_Heightmap_Flow.png-c20d9c1302723ee8a7f3c6e579a16b58.s3tc.ctex"]
+source_file="res://Assets/World meshes/Ter4_Heightmap_Flow.png"
+dest_files=["res://.godot/imported/Ter4_Heightmap_Flow.png-7cc4b7d6ed31a635cd5260e1198874f3.s3tc.ctex"]
 
 [params]
 

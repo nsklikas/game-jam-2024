@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br0avrn25nc6n"
-path.s3tc="res://.godot/imported/Ground059_1K-JPG_Color.jpg-f9da64fcbe586699b26bb0d0b8f33d3e.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ground059_1K-JPG_Color.jpg-236669796fa37f32f5e898e274e3a955.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/tiles/textures/Ground059_1K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/Ground059_1K-JPG_Color.jpg-f9da64fcbe586699b26bb0d0b8f33d3e.s3tc.ctex"]
+source_file="res://Assets/tiles/textures/Ground059_1K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/Ground059_1K-JPG_Color.jpg-236669796fa37f32f5e898e274e3a955.s3tc.ctex"]
 
 [params]
 

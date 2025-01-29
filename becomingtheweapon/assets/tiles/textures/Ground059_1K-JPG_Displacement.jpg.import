@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://83qnf8x7e3ko"
-path="res://.godot/imported/Ground059_1K-JPG_Displacement.jpg-3c9d81f1ff262ef5af79a249940d9f85.ctex"
+path="res://.godot/imported/Ground059_1K-JPG_Displacement.jpg-325bebb87f324551e93296e74f5dbc3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/textures/Ground059_1K-JPG_Displacement.jpg"
-dest_files=["res://.godot/imported/Ground059_1K-JPG_Displacement.jpg-3c9d81f1ff262ef5af79a249940d9f85.ctex"]
+source_file="res://Assets/tiles/textures/Ground059_1K-JPG_Displacement.jpg"
+dest_files=["res://.godot/imported/Ground059_1K-JPG_Displacement.jpg-325bebb87f324551e93296e74f5dbc3d.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c83402puepxme"
-path.s3tc="res://.godot/imported/Tiles_Tile1Diffuse.png-024054449d1bc138a3fd4935f6532e41.s3tc.ctex"
+path.s3tc="res://.godot/imported/Tiles_Tile1Diffuse.png-c5f3394fa1f500f14aa4f54de2e133dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Desert Tiles/Tiles_Tile1Diffuse.png"
-dest_files=["res://.godot/imported/Tiles_Tile1Diffuse.png-024054449d1bc138a3fd4935f6532e41.s3tc.ctex"]
+source_file="res://Assets/Desert Tiles/Tiles_Tile1Diffuse.png"
+dest_files=["res://.godot/imported/Tiles_Tile1Diffuse.png-c5f3394fa1f500f14aa4f54de2e133dd.s3tc.ctex"]
 
 [params]
 

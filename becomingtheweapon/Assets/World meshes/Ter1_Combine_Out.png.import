@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbq3wl84srfmm"
-path.s3tc="res://.godot/imported/Ter1_Combine_Out.png-e7676ddd7e4f1cddffdd69d63a327fe3.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ter1_Combine_Out.png-0e1aadb776d81e09906d93879c820a22.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/World meshes/Ter1_Combine_Out.png"
-dest_files=["res://.godot/imported/Ter1_Combine_Out.png-e7676ddd7e4f1cddffdd69d63a327fe3.s3tc.ctex"]
+source_file="res://Assets/World meshes/Ter1_Combine_Out.png"
+dest_files=["res://.godot/imported/Ter1_Combine_Out.png-0e1aadb776d81e09906d93879c820a22.s3tc.ctex"]
 
 [params]
 

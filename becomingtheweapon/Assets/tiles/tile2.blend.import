@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3rurm4s6ap5a"
-path="res://.godot/imported/tile2.blend-10c848666cf3dda4c808032e15d00d00.scn"
+path="res://.godot/imported/tile2.blend-83655b2ee97536ccdcd0cca91467f246.scn"
 
 [deps]
 
-source_file="res://assets/tiles/tile2.blend"
-dest_files=["res://.godot/imported/tile2.blend-10c848666cf3dda4c808032e15d00d00.scn"]
+source_file="res://Assets/tiles/tile2.blend"
+dest_files=["res://.godot/imported/tile2.blend-83655b2ee97536ccdcd0cca91467f246.scn"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bon1bbbdhavm8"
-path.s3tc="res://.godot/imported/Tiles_Tile2Roughness.png-d7f9ab27ed992512dbd675cc3aa8072c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Tiles_Tile2Roughness.png-6ee6d336bf2f4ebc59a5285fbb69bffd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Desert Tiles/Tiles_Tile2Roughness.png"
-dest_files=["res://.godot/imported/Tiles_Tile2Roughness.png-d7f9ab27ed992512dbd675cc3aa8072c.s3tc.ctex"]
+source_file="res://Assets/Desert Tiles/Tiles_Tile2Roughness.png"
+dest_files=["res://.godot/imported/Tiles_Tile2Roughness.png-6ee6d336bf2f4ebc59a5285fbb69bffd.s3tc.ctex"]
 
 [params]
 
