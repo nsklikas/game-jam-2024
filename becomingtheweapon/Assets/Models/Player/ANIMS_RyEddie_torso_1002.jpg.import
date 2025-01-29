@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0q7fsd21ucq5"
-path.s3tc="res://.godot/imported/ANIMS_RyEddie_torso_1002.jpg-9d592cc4d7cf43333d16863adfe22c9b.s3tc.ctex"
+path.s3tc="res://.godot/imported/ANIMS_RyEddie_torso_1002.jpg-abf5785590512c403891bc014783114f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Models/Player/ANIMS_RyEddie_torso_1002.jpg"
-dest_files=["res://.godot/imported/ANIMS_RyEddie_torso_1002.jpg-9d592cc4d7cf43333d16863adfe22c9b.s3tc.ctex"]
+source_file="res://Assets/Models/Player/ANIMS_RyEddie_torso_1002.jpg"
+dest_files=["res://.godot/imported/ANIMS_RyEddie_torso_1002.jpg-abf5785590512c403891bc014783114f.s3tc.ctex"]
 
 [params]
 

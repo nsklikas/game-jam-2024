@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b04auc42727t7"
-path="res://.godot/imported/Rock_claw.glb-5f66bbc1d55e8bd838b28b3693ea8218.scn"
+path="res://.godot/imported/Rock_claw.glb-ef742c2ce25d486da04e479dd7be8bc6.scn"
 
 [deps]
 
-source_file="res://assets/Models/Enemies/Rock_claw.glb"
-dest_files=["res://.godot/imported/Rock_claw.glb-5f66bbc1d55e8bd838b28b3693ea8218.scn"]
+source_file="res://Assets/Models/Enemies/Rock_claw.glb"
+dest_files=["res://.godot/imported/Rock_claw.glb-ef742c2ce25d486da04e479dd7be8bc6.scn"]
 
 [params]
 

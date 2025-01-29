@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bovde6k1vpeug"
-path="res://.godot/imported/ANIMS_FCL2-PSP002-00_SPECULAR.jpg-ea8db15e027b670c543510af8a2f4883.ctex"
+path="res://.godot/imported/ANIMS_FCL2-PSP002-00_SPECULAR.jpg-5adae78a324b4387054428320da05dd0.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Models/Player/ANIMS_FCL2-PSP002-00_SPECULAR.jpg"
-dest_files=["res://.godot/imported/ANIMS_FCL2-PSP002-00_SPECULAR.jpg-ea8db15e027b670c543510af8a2f4883.ctex"]
+source_file="res://Assets/Models/Player/ANIMS_FCL2-PSP002-00_SPECULAR.jpg"
+dest_files=["res://.godot/imported/ANIMS_FCL2-PSP002-00_SPECULAR.jpg-5adae78a324b4387054428320da05dd0.ctex"]
 
 [params]
 

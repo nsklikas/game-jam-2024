@@ -26,7 +26,7 @@ var health = 800
 
 func _ready():
 	state_machine = animation_tree["parameters/playback"]
-
+	$Radar/CanvasLayer/RadarUI.player = self
 
 func _physics_process(delta: float) -> void:
 	var walk: bool

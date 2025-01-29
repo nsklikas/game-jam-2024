@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf3gpvl2eypm0"
-path="res://.godot/imported/T_cracks35.png-4cb750d0c4b9c34ccfbd00162f09b491.ctex"
+uid="uid://dvucn3dyxabor"
+path="res://.godot/imported/radar-306289_640.png-b91ced76997eb337869031856764a00c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/T_cracks35.png"
-dest_files=["res://.godot/imported/T_cracks35.png-4cb750d0c4b9c34ccfbd00162f09b491.ctex"]
+source_file="res://scenes/radar-306289_640.png"
+dest_files=["res://.godot/imported/radar-306289_640.png-b91ced76997eb337869031856764a00c.ctex"]
 
 [params]
 

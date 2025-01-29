@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwn73e6uto3se"
-path.s3tc="res://.godot/imported/cracked_red_ground_diff_1k.png-3bb8c128e5262df673ff61f9735454f4.s3tc.ctex"
+path.s3tc="res://.godot/imported/cracked_red_ground_diff_1k.png-1c9de9aaedac7d10dc3fb81223bc3b0e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/cracked_red_ground_diff_1k.png"
-dest_files=["res://.godot/imported/cracked_red_ground_diff_1k.png-3bb8c128e5262df673ff61f9735454f4.s3tc.ctex"]
+source_file="res://Assets/textures/cracked_red_ground_diff_1k.png"
+dest_files=["res://.godot/imported/cracked_red_ground_diff_1k.png-1c9de9aaedac7d10dc3fb81223bc3b0e.s3tc.ctex"]
 
 [params]
 
